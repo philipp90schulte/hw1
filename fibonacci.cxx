@@ -4,6 +4,12 @@ Date: 29.10.2015
 
 Description: 
 The following programm implements the Fibonacci number algorithm.
+f(0) = 0
+f(1) = 1
+f(n) = f(n-2) + f(n-1)
+
+The user can calculate more than one fibonacci number and can select an iterative or recursive implementation.
+
 */
 
 #include <iostream>
@@ -11,9 +17,9 @@ The following programm implements the Fibonacci number algorithm.
 /**
  * Function name: recfib
  * 
- * Input variables:
+ * Input variables: n - int type
  * 
- * Output:
+ * Output: the calculation of the recursive call or 1
  * 
  */
 int recfib(int n) {
@@ -27,12 +33,12 @@ int recfib(int n) {
 }
 
 /**
- * Function name:
+ * Function name: itfib
  * 
- * Input variables:
+ * Input variables: n - int type
  * 
- * Output:
- * 
+ * Output: result - int type
+ *
  */
 int itfib(int n) {
 	int result,  last=1; int seclast=1;
@@ -53,6 +59,7 @@ int itfib(int n) {
 using namespace std;
 
 int main(){
+	// some 
   cout << "Welcome to my Fibonacci calculator." << endl;
   
   cout << "In the following you can calculate the Fibonacci number of an entered number." << endl;
@@ -66,20 +73,24 @@ int main(){
   string nextfib = "yes";
   
 
-  
+  // start a while loop for more than one fibonacci calculation.
   while (nextfib == "yes") {
 	  
+	  // Get the number which shall be calculate
 	  cout << "Enter a number to calculate the Fibonacci number: ";
-	    cin >> N;
-  
-	  cout << "Do you want to calt the fibonacci number recursive (0) or iterative (1)?";
+	  cin >> N;
+	  
+	  // Ask the user for the calculation algorithm
+	  cout << "Do you want to calculate the fibonacci number recursive (0) or iterative (1)?";
 	  cin >> it;
-  
+	  
+	  // Perfom calculation
 	  if (it == 0)
 		  lastfib = itfib(N);
 	  else
 		  lastfib = recfib(N);
-  
+	  
+	  // Ask for additional fibonacci calculations
 	  cout << "The result is: " << lastfib << endl;
 	  
 	  cout << "Do you want to calculate one more fibonacci number (yes / no)? ";
@@ -89,6 +100,6 @@ int main(){
   
   cout << "So long!." << endl;
   
-//
+// Finisch program
   return 0;
 }
