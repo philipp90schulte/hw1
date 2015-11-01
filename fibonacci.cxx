@@ -24,9 +24,11 @@ The user can calculate more than one fibonacci number and can select an iterativ
  */
 int recfib(int n) {
 	// proves if the entered number is 0 or 1
-	if ((n == 1) or (n == 0))
-		// if this is true the function returns 1
-		return 1;
+	if (n == 0)
+                // if this is true the function returns 1
+                return 0;
+        if (n == 1)
+                return 1;
 	else
 		// if n > 1 the function returns the sum of the recusive calls n-1 and n-2
 		return recfib(n-1) + recfib(n-2);
@@ -43,9 +45,11 @@ int recfib(int n) {
 int itfib(int n) {
 	int result,  last=1; int seclast=1;
 	// proves if the entered number is 0 or 1
-	if ((n == 1) or (n == 0))
-		// if this is true the function returns 1
-		return 1;
+	if (n == 0)
+                // if this is true the function returns 1
+                return 0;
+        if (n == 1)
+                return 1;
 	else {
 		for (int i=2; i<=n; i++) {
 			result = last + seclast;
